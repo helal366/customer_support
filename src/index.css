@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@plugin "daisyui";
+
+.padding{
+  @apply px-2 sm:px-4 md:px-12 lg:px-20 xl:px-30 2xl:px-36
+}
+h2{
+  @apply text-2xl font-semibold leading-normal
+}
+.links{
+  @apply cursor-pointer px-2 py-1 bg-gray-200/20 hover:bg-gray-200 border border-gray-300/60 rounded shadow-sm transition-all duration-200
+}
+.card{
+  @apply bg-white rounded shadow-2xl p-2 lg:p-3
+}

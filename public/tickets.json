@@ -1,0 +1,122 @@
+[
+  {
+    "id": 1,
+    "title": "Login Issues - Can't Access Account",
+    "status": "open",
+    "description": "Customer is unable to log in to their account. They've tried resetting their password multiple times but still cannot access it.",
+    "ticket_no": "#1001",
+    "priority": "High Priority",
+    "customer": "John Smith",
+    "date": "1/3/2026"
+  },
+  {
+    "id": 2,
+    "title": "Payment Failed During Checkout",
+    "status": "open",
+    "description": "Customer reports payment failure while checking out. Transaction shows pending but order was not placed.",
+    "ticket_no": "#1002",
+    "priority": "High Priority",
+    "customer": "Emily Johnson",
+    "date": "2/3/2026"
+  },
+  {
+    "id": 3,
+    "title": "Order Not Delivered",
+    "status": "in progress",
+    "description": "Customer claims their order has not been delivered even though tracking shows completed.",
+    "ticket_no": "#1003",
+    "priority": "Medium Priority",
+    "customer": "Michael Brown",
+    "date": "3/3/2026"
+  },
+  {
+    "id": 4,
+    "title": "Refund Request for Cancelled Order",
+    "status": "closed",
+    "description": "Customer cancelled the order but has not received their refund yet.",
+    "ticket_no": "#1004",
+    "priority": "Medium Priority",
+    "customer": "Sophia Williams",
+    "date": "4/3/2026"
+  },
+  {
+    "id": 5,
+    "title": "App Crashing on Startup",
+    "status": "open",
+    "description": "Customer reports that the mobile application crashes immediately after opening.",
+    "ticket_no": "#1005",
+    "priority": "High Priority",
+    "customer": "Daniel Martinez",
+    "date": "5/3/2026"
+  },
+  {
+    "id": 6,
+    "title": "Unable to Update Profile Information",
+    "status": "in progress",
+    "description": "Customer cannot update their phone number and address from account settings.",
+    "ticket_no": "#1006",
+    "priority": "Medium Priority",
+    "customer": "Olivia Anderson",
+    "date": "6/3/2026"
+  },
+  {
+    "id": 7,
+    "title": "Discount Code Not Working",
+    "status": "open",
+    "description": "Customer tried applying a promotional code but the system shows it as invalid.",
+    "ticket_no": "#1007",
+    "priority": "Medium Priority",
+    "customer": "James Thomas",
+    "date": "7/3/2026"
+  },
+  {
+    "id": 8,
+    "title": "Account Suspended Without Notice",
+    "status": "open",
+    "description": "Customer's account has been suspended and they did not receive any prior notification.",
+    "ticket_no": "#1008",
+    "priority": "High Priority",
+    "customer": "Ava Taylor",
+    "date": "8/3/2026"
+  },
+  {
+    "id": 9,
+    "title": "Incorrect Billing Amount",
+    "status": "in progress",
+    "description": "Customer states that they were charged twice for a single subscription renewal.",
+    "ticket_no": "#1009",
+    "priority": "High Priority",
+    "customer": "William Moore",
+    "date": "9/3/2026"
+  },
+  {
+    "id": 10,
+    "title": "Email Notifications Not Received",
+    "status": "closed",
+    "description": "Customer is not receiving order confirmation and promotional emails.",
+    "ticket_no": "#1010",
+    "priority": "Medium Priority",
+    "customer": "Isabella Martin",
+    "date": "10/3/2026"
+  },
+  {
+    "id": 11,
+    "title": "Feature Request - Dark Mode",
+    "status": "open",
+    "description": "Customer suggested adding a dark mode option in the application settings.",
+    "ticket_no": "#1011",
+    "priority": "Medium Priority",
+    "customer": "Benjamin Lee",
+    "date": "11/3/2026"
+  },
+  {
+    "id": 12,
+    "title": "Slow Website Loading Speed",
+    "status": "in progress",
+    "description": "Customer reports that pages take too long to load, especially during checkout.",
+    "ticket_no": "#1012",
+    "priority": "Medium Priority",
+    "customer": "Charlotte Harris",
+    "date": "12/3/2026"
+  }
+]
