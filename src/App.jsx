@@ -13,13 +13,17 @@ const fetchTickets = async () => {
 }
 const ticketsPromise = fetchTickets();
 function App() {
-
-  const [progress, setProgress] = useState(()=>{
-    const progressList=localStorage.getItem("progress");
-    return progressList? JSON.parse(progressList): [];
+  const progressKey = "progress"
+  const resolvedKey = "resolved_list";
+  const [progress, setProgress] = useState(() => {
+    const progressList = localStorage.getItem(progressKey);
+    return progressList ? JSON.parse(progressList) : [];
   });
+  const [resolved, setResolved] = useState(() => {
+    const resolvedList = localStorage.getItem(resolvedKey);
+    return resolvedList ? JSON.parse(resolvedList) : [];
+  })
 
-  
   return (
     <>
       <Navbar></Navbar>
@@ -38,7 +42,13 @@ function App() {
           </div>
           {/* task status and resolved task  */}
           <div className='col-span-2 mb-6 md:mb-10 lg:mb-16 overflow-y-scroll'>
-            <TaskStatus progress={progress}></TaskStatus>
+            <TaskStatus
+              progress={progress}
+              setProgress={setProgress}
+              progressKey={progressKey}
+              resolved={resolved}
+              setResolved={setResolved}
+              resolvedKey={resolvedKey}></TaskStatus>
             <ResolvedTask></ResolvedTask>
           </div>
         </div>
