@@ -28,20 +28,21 @@ function App() {
     <>
       <Navbar></Navbar>
       <section className='bg-[#E2DFD280] min-h-screen padding '>
-        <Hero></Hero>
+        <Hero progress={progress} resolved={resolved}></Hero>
         {/* tickets section */}
-        <div className='grid grid-cols-1 md:grid-cols-8 gap-3 md:gap-6'>
-          <div className='col-span-6'>
+        <div className='grid grid-cols-1 md:grid-cols-8 gap-3 md:gap-6 h-screen pb-12'>
+          <div className='col-span-6 '>
             <h2 className='mb-2'>Customer tickets</h2>
             <Suspense fallback={<h2>Loading...</h2>}>
               <Tickets ticketsPromise={ticketsPromise}
                 progress={progress}
                 setProgress={setProgress}
+                resolved={resolved}
               ></Tickets>
             </Suspense>
           </div>
           {/* task status and resolved task  */}
-          <div className='col-span-2 mb-6 md:mb-10 lg:mb-16 overflow-y-scroll'>
+          <div className='col-span-2 mb-6 md:mb-10 lg:mb-16 overflow-y-auto'>
             <TaskStatus
               progress={progress}
               setProgress={setProgress}
@@ -49,7 +50,7 @@ function App() {
               resolved={resolved}
               setResolved={setResolved}
               resolvedKey={resolvedKey}></TaskStatus>
-            <ResolvedTask></ResolvedTask>
+            <ResolvedTask resolved={resolved}></ResolvedTask>
           </div>
         </div>
       </section>

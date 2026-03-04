@@ -2,18 +2,19 @@ import React from 'react';
 import { FaCircle } from "react-icons/fa";
 import { MdOutlineDateRange } from "react-icons/md";
 
-const Ticket = ({ ticket, progress, setProgress }) => {
+const Ticket = ({ ticket, progress, setProgress, resolved }) => {
     const {id, title, description, ticket_no, priority, customer, date } = ticket;
     const isProgress = progress.some(x => x.title === title);
+    const isResolved=resolved.some(x=>x.id===id);
     const handleProgress = () => {
         if (!isProgress) {
             const updatedProgress = [...progress, {id,title}];
             setProgress(updatedProgress);
-            localStorage.setItem("progress", JSON.stringify(updatedProgress))
+            localStorage.setItem("progress", JSON.stringify(updatedProgress));
         }
     }
     return (
-        <section className='card'>
+        <section className={`card ${isResolved && "hidden"}`}>
             {/* title */}
             <div className='flex flex-wrap justify-between items-center text-sm gap-3 mb-2'>
                 <p className='font-semibold'>{title}</p>
@@ -23,7 +24,7 @@ const Ticket = ({ ticket, progress, setProgress }) => {
                     className={`px-3 py-1 rounded-full ${isProgress ? "bg-yellow-400/20 cursor-not-allowed" : "bg-green-400/20 cursor-pointer"}  flex justify-baseline items-center `}>
                     {isProgress ? (
                        <>
-                            <span className='mr-1 text-yellow-500'><FaCircle /></span>
+                            <span className='mr-1 text-yellow-600'><FaCircle /></span>
                             <span>In-Progress</span>
                         </>
                     ) : (

@@ -2,7 +2,7 @@ import React from 'react';
 import vector1 from './vector1.png'
 
 
-const Hero = () => {
+const Hero = ({progress, resolved}) => {
     return (
         <section className='py-14 grid grid-cols-1 md:grid-cols-2 gap-5'>
             <div className="relative overflow-hidden bg-linear-to-br from-[#632ee3] to-[#9f62f2] rounded-lg ">
@@ -26,7 +26,7 @@ const Hero = () => {
                         In-Progres
                     </p>
                     <p className="text-4xl font-bold">
-                        0
+                        {progress.length}
                     </p>
                 </div>
             </div>
@@ -51,7 +51,7 @@ const Hero = () => {
                         Resolved
                     </h1>
                     <h1 className="text-4xl font-bold">
-                        0
+                        {resolved.length}
                     </h1>
                 </div>
             </div>

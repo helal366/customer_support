@@ -1,7 +1,7 @@
 import React, { use } from 'react';
 import Ticket from './Ticket';
 
-const Tickets = ({ ticketsPromise, progress, setProgress }) => {
+const Tickets = ({ ticketsPromise, progress, setProgress, resolved }) => {
     const tickets = use(ticketsPromise);
     return (
         <section className='grid grid-cols-1 md:grid-cols-2 gap-3 mb-6 md:mb-10 lg:mb-16'>
@@ -10,7 +10,8 @@ const Tickets = ({ ticketsPromise, progress, setProgress }) => {
                     key={tic.id}
                     ticket={tic}
                     progress={progress}
-                    setProgress={setProgress}>
+                    setProgress={setProgress}
+                    resolved={resolved}>
                 </Ticket>)
             }
         </section>
