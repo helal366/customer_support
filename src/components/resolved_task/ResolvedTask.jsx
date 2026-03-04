@@ -21,7 +21,7 @@ const ResolvedTask = ({ resolved }) => {
                 }
 
                 {
-                    resolved.map(r => <div key={r.id} className='bg-[#e0e7ff] rounded shadow-sm p-2 md:p-4 mb-4'>
+                    resolved.map(r => <div key={r.id} className='bg-[#e0e7ff] rounded shadow-sm px-2 md:px-4 py-2 mb-4'>
                         <p className='font-semibold mb-2'>{r.title}</p>
                     </div>)
                 }
