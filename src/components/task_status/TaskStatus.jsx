@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { BiSolidHandUp } from "react-icons/bi";
+import { toast } from 'react-toastify';
 
 const TaskStatus = ({ progress, setProgress, progressKey, resolved, setResolved, resolvedKey }) => {
     const [statusOpen, setStatusOpen] = useState(false);
@@ -13,6 +14,8 @@ const TaskStatus = ({ progress, setProgress, progressKey, resolved, setResolved,
         const updatedResolved = [...resolved, { id, title }];
         setResolved(updatedResolved);
         localStorage.setItem(resolvedKey, JSON.stringify(updatedResolved));
+
+        toast.success("Success! Task completed.");
     }
     return (
         <div className={`mb-5 lg:mb-8`}>

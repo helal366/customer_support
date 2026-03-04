@@ -1,6 +1,7 @@
 import React from 'react';
 import { FaCircle } from "react-icons/fa";
 import { MdOutlineDateRange } from "react-icons/md";
+import { toast } from 'react-toastify';
 
 const Ticket = ({ ticket, progress, setProgress, resolved }) => {
     const {id, title, description, ticket_no, priority, customer, date } = ticket;
@@ -11,6 +12,8 @@ const Ticket = ({ ticket, progress, setProgress, resolved }) => {
             const updatedProgress = [...progress, {id,title}];
             setProgress(updatedProgress);
             localStorage.setItem("progress", JSON.stringify(updatedProgress));
+
+            toast.success("Ticket added to Task Status.");
         }
     }
     return (
