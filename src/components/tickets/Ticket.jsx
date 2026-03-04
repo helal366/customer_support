@@ -4,29 +4,31 @@ import { MdOutlineDateRange } from "react-icons/md";
 import { toast } from 'react-toastify';
 
 const Ticket = ({ ticket, progress, setProgress, resolved }) => {
-    const {id, title, description, ticket_no, priority, customer, date } = ticket;
+    const { id, title, description, ticket_no, priority, customer, date } = ticket;
     const isProgress = progress.some(x => x.title === title);
-    const isResolved=resolved.some(x=>x.id===id);
+    const isResolved = resolved.some(x => x.id === id);
     const handleProgress = () => {
         if (!isProgress) {
-            const updatedProgress = [...progress, {id,title}];
+            // update tasks to progress
+            const updatedProgress = [...progress, { id, title }];
             setProgress(updatedProgress);
             localStorage.setItem("progress", JSON.stringify(updatedProgress));
 
+            // alert with toast
             toast.success("Ticket added to Task Status.");
         }
     }
     return (
         <section onClick={handleProgress}
-        className={`card ${isResolved && "hidden"} ${isProgress?"cursor-not-allowed":"cursor-pointer"}`}>
+            className={`card ${isResolved && "hidden"} ${isProgress ? "cursor-not-allowed" : "cursor-pointer"}`}>
             {/* title */}
             <div className='flex flex-wrap justify-between items-center text-sm gap-3 mb-2'>
                 <p className='font-semibold'>{title}</p>
-                <button                   
+                <button
                     disabled={isProgress}
                     className={`px-3 py-1 rounded-full ${isProgress ? "bg-yellow-400/20 " : "bg-green-400/20 "}  flex justify-baseline items-center `}>
                     {isProgress ? (
-                       <>
+                        <>
                             <span className='mr-1 text-yellow-600'><FaCircle /></span>
                             <span>In-Progress</span>
                         </>
