@@ -14,14 +14,14 @@ const Ticket = ({ ticket, progress, setProgress, resolved }) => {
         }
     }
     return (
-        <section className={`card ${isResolved && "hidden"}`}>
+        <section onClick={handleProgress}
+        className={`card ${isResolved && "hidden"} ${isProgress?"cursor-not-allowed":"cursor-pointer"}`}>
             {/* title */}
             <div className='flex flex-wrap justify-between items-center text-sm gap-3 mb-2'>
                 <p className='font-semibold'>{title}</p>
-                <button
-                    onClick={handleProgress}
+                <button                   
                     disabled={isProgress}
-                    className={`px-3 py-1 rounded-full ${isProgress ? "bg-yellow-400/20 cursor-not-allowed" : "bg-green-400/20 cursor-pointer"}  flex justify-baseline items-center `}>
+                    className={`px-3 py-1 rounded-full ${isProgress ? "bg-yellow-400/20 " : "bg-green-400/20 "}  flex justify-baseline items-center `}>
                     {isProgress ? (
                        <>
                             <span className='mr-1 text-yellow-600'><FaCircle /></span>
