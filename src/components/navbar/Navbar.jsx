@@ -16,7 +16,7 @@ const Navbar = () => {
   );
 
   return (
-    <div className="bg-white shadow-md border-b-2 border-gray-500/30 padding">
+    <div className="bg-white shadow-md border-b-2 border-gray-500/30 padding sticky top-0 z-10">
       <div className="flex justify-between items-center px-6 py-4">
 
         {/* Left - Title (Always Visible) */}
