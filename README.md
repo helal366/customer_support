@@ -153,14 +153,101 @@ function App() {
     </UserContext.Provider>
   );
 }
-
+```
 Now Navbar can access user without passing props manually.
 
 * Good for global data
 * Cleaner than deep prop drilling
 
+# How is event handling done in React?
+## Answer:
+### How Event Handling Works in React:
+React handles events similar to HTML, but with some important differences:
 
+* Uses camelCase
+* Pass a function, not a string
+* Uses a system called Synthetic Events
 
+#### 1️. Basic Syntax
+HTML:
+<button onclick="handleClick()">Click</button>
+What is this?
+React:
+```
+<button onClick={handleClick}>Click</button>
+```
+- Notice:
+* onclick → wrong
+* onClick → correct (camelCase)
+
+No quotes around function
+
+#### 2️. Example – Button Click
+```
+function Example() {
+  const handleClick = () => {
+    alert("Button clicked!");
+  };
+
+  return <button onClick={handleClick}>Click Me</button>;
+}
+```
+- When clicked:
+
+* Function runs
+* Component may re-render (if state changes)
+
+#### 3️. With State (Very Common)
+```
+import { useState } from "react";
+
+function Counter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <button onClick={() => setCount(count + 1)}>
+      {count}
+    </button>
+  );
+}
+```
+- Here:
+
+* Event triggers setCount
+* State updates
+* Component re-renders
+
+#### 4️. Passing Parameters
+
+Must wrap it in an arrow function:
+```
+<button onClick={() => handleDelete(id)}>
+  Delete
+</button>
+```
+The following method is wrong:
+```
+  <button onClick={handleDelete(id)}>
+```
+That would execute immediately.
+
+#### 5️. Handling Form Submit
+```
+function Form() {
+  const handleSubmit = (e) => {
+    e.preventDefault(); // prevent page reload
+    console.log("Form submitted");
+  };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <button type="submit">Submit</button>
+    </form>
+  );
+}
+
+e.preventDefault() stops page refresh.
+```
 
 
 
