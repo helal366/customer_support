@@ -1,5 +1,5 @@
 # What is JSX, and why is it used?
-### Answer: 
+## Answer: 
 #### JSX
 ```
 JSX means JavaScript XML. This looks like HTML, but it’s actually JavaScript.
@@ -57,7 +57,7 @@ Encourages component organization
 ```
 
 # What is the difference between State and Props?
-### Answer: 
+## Answer: 
 #### State:
 - State is internal data of a component.
 - The component itself controls it.
@@ -69,6 +69,43 @@ Encourages component organization
 - The parent component controls Props.
 - Props are read-only. 
 - Props are used for communication between components.
+
+# What is the useState hook, and how does it work?
+## Answer:
+### useState hook:
+```
+    In React, useState Hook is that allows functional components to store and manage state.
+```
+#### Basic Syntax:
+```
+const [state, setState] = useState(initialValue);
+```
+- It returns:
+
+* state variable
+* function to update that state
+
+##### Example:
+```
+const [open, setOpen] = useState(false);
+open → current state value
+setOpen → function to update it
+false → initial value
+```
+#### How It Works Internally
+
+- When the state is called:
+```
+setOpen(true);
+```
+- React:
+
+* Updates the state value
+* Re-renders the component
+* Updates the UI
+
+###### State updates are asynchronous.
+
 
 
 
