@@ -107,6 +107,59 @@ setOpen(true);
 ###### State updates are asynchronous.
 
 
+# How can you share state between components in React?
+## Answer: There are several ways to share state between components, depending on app size and complexity.
+### 1. Lift State Up (Most Common & Recommended)
+- If two components need the same state:
+
+* Move the state to their closest common parent
+* Pass it down via props
+
+- Example
+```
+function Parent() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <>
+      <Display count={count} />
+      <Button setCount={setCount} />
+    </>
+  );
+}
+```
+count lives in Parent
+Display reads it
+Button updates it
+
+* Simple
+* Clean
+* React best practice
+
+### 2. Props Drilling
+- Can be passed props through multiple layers.
+* App → Layout → Dashboard → Sidebar → Button
+
+### 3️. Context API (Avoid Prop Drilling)
+
+When many components need access to the same state (like user, theme, language).
+```
+const UserContext = createContext();
+
+function App() {
+  return (
+    <UserContext.Provider value={user}>
+      <Navbar />
+    </UserContext.Provider>
+  );
+}
+
+Now Navbar can access user without passing props manually.
+
+* Good for global data
+* Cleaner than deep prop drilling
+
+
 
 
 
