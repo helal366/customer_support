@@ -56,6 +56,22 @@ Makes UI structure predictable
 Encourages component organization
 ```
 
+# What is the difference between State and Props?
+### Answer: 
+#### State:
+- State is internal data of a component.
+- The component itself controls it.
+- State is mutable. It can change.
+- State is used for dynamic behavior.
+
+#### Props:
+- Props are used to pass data from parent to child.
+- The parent component controls Props.
+- Props are read-only. 
+- Props are used for communication between components.
+
+
+
 
 
 
