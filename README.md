@@ -1,4 +1,4 @@
-# What is JSX, and why is it used?
+# 1. What is JSX, and why is it used?
 ## Answer: 
 #### JSX
 ```
@@ -56,7 +56,7 @@ Makes UI structure predictable
 Encourages component organization
 ```
 
-# What is the difference between State and Props?
+# 2. What is the difference between State and Props?
 ## Answer: 
 #### State:
 - State is internal data of a component.
@@ -70,7 +70,7 @@ Encourages component organization
 - Props are read-only. 
 - Props are used for communication between components.
 
-# What is the useState hook, and how does it work?
+# 3. What is the useState hook, and how does it work?
 ## Answer:
 ### useState hook:
 ```
@@ -107,7 +107,7 @@ setOpen(true);
 ###### State updates are asynchronous.
 
 
-# How can you share state between components in React?
+# 4. How can you share state between components in React?
 ## Answer: There are several ways to share state between components, depending on app size and complexity.
 ### 1. Lift State Up (Most Common & Recommended)
 - If two components need the same state:
@@ -159,7 +159,7 @@ Now Navbar can access user without passing props manually.
 * Good for global data
 * Cleaner than deep prop drilling
 
-# How is event handling done in React?
+# 5. How is event handling done in React?
 ## Answer:
 ### How Event Handling Works in React:
 React handles events similar to HTML, but with some important differences:
