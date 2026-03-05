@@ -30,7 +30,7 @@ function App() {
       <section className='bg-[#E2DFD280] min-h-screen padding '>
         <Hero progress={progress} resolved={resolved}></Hero>
         {/* tickets section */}
-        <div className='grid grid-cols-1 md:grid-cols-8 gap-3 md:gap-6 h-screen pb-12'>
+        <div className='grid grid-cols-1 md:grid-cols-8 gap-3 md:gap-6 md:h-screen pb-12'>
           <div className='col-span-6 '>
             <h2 className='mb-2'>Customer tickets</h2>
             <Suspense fallback={<h2>Loading...</h2>}>

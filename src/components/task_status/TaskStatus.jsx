@@ -21,7 +21,7 @@ const TaskStatus = ({ progress, setProgress, progressKey, resolved, setResolved,
         toast.success("Success! Task completed.");
     }
     return (
-        <div className={`mb-5 lg:mb-8`}>
+        <div className={`mb-8`}>
             {/* heading */}
             <h2 onClick={() => setStatusOpen(!statusOpen)}
                 className='mb-2 cursor-pointer hover:bg-green-700 p-2 bg-green-900 rounded text-white'>
